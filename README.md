@@ -7,3 +7,4 @@
 #### laravel new Resume-Builder-App
 #### composer require laravel/ui
 #### php artisan ui vue --auth
+#### php artisan serve
