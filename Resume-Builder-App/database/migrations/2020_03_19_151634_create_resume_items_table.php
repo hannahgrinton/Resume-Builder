@@ -13,7 +13,7 @@ class CreateResumeItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('resume-items', function (Blueprint $table) {
+        Schema::create('resume_items', function (Blueprint $table) {
             $table->bigIncrements('itemId');
             $table->string('name', 150); //name of resume item
             $table->string('description', 250); //description of resume item
@@ -29,6 +29,6 @@ class CreateResumeItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resume-items');
+        Schema::dropIfExists('resume_items');
     }
 }

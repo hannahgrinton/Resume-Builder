@@ -8,9 +8,11 @@
 #### composer require laravel/ui
 #### php artisan ui vue --auth
 #### php artisan serve
-#### php artisan make:migration create_resume-items_table --create=resume-items
-#### php artisan make:migration create_generated-resumes_table --create=generated-resumes
-#### php artisan make:migration create_resume-relations_table --create=resume-relations
+#### php artisan make:migration create_resumeItems_table --create=resume_items
+#### php artisan make:migration create_generatedResumes_table --create=generatedResumes
+#### php artisan make:migration create_resumeRelations_table --create=resumeRelations
 #### php artisan make:seeder ResumeItemsTableSeeder
 #### php artisan migrate
+#### composer dump-autoload
 #### php artisan db:seed
+#### php artisan make:controller ResumeController

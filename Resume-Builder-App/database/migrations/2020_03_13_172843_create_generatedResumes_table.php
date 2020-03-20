@@ -13,7 +13,7 @@ class CreateGeneratedResumesTable extends Migration
      */
     public function up()
     {
-        Schema::create('generated-resumes', function (Blueprint $table) {
+        Schema::create('generatedResumes', function (Blueprint $table) {
             $table->bigIncrements('genId');
             $table->string('name', 150);
             $table->string('email', 200);
@@ -28,6 +28,6 @@ class CreateGeneratedResumesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('generated-resumes');
+        Schema::dropIfExists('generatedResumes');
     }
 }

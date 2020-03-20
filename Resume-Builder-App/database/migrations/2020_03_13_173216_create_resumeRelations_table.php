@@ -13,10 +13,10 @@ class CreateResumeRelationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('resume-relations', function (Blueprint $table) {
+        Schema::create('resumeRelations', function (Blueprint $table) {
             $table->bigIncrements('relId');
             $table->unsignedBigInteger('genId');
-            $table->foreign('genId')->references('genId')->on('generated-resumes');
+            $table->foreign('genId')->references('genId')->on('generatedResumes');
             $table->unsignedBigInteger('itemId');
             $table->foreign('itemId')->references('itemId')->on('resume-items');
             $table->timestamps();
@@ -30,6 +30,6 @@ class CreateResumeRelationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resume-relations');
+        Schema::dropIfExists('resumeRelations');
     }
 }
