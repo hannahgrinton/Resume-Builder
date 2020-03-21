@@ -58,7 +58,7 @@ class ResumeItemsTableSeeder extends Seeder
         //work experience -> category 2
         ResumeItem::create([
             'name' => 'Greenhorn Solutions Dev.',
-            'description' => ' Work placement for college program for month of May, 2019. Built Wordpress sites for clients based off needs gathering. Followed Agile/Scrum methodologies',
+            'description' => ' Work placement for college program for month of May, 2019. Built Wordpress sites for clients based off needs gathering. Followed Agile/Scrum methodologies.',
             'category' => "2"
         ]);
         ResumeItem::create([
@@ -94,7 +94,7 @@ class ResumeItemsTableSeeder extends Seeder
         ]);
         ResumeItem::create([
             'name' => 'Portfolio Site',
-            'description' => 'WordPress site developed to showcase skills and experience. (https://hannahgrinton)',
+            'description' => 'WordPress site developed to showcase skills and experience. (https://hannahgrinton.ca)',
             'category' => "4"
         ]);
         ResumeItem::create([

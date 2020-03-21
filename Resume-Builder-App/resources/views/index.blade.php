@@ -12,10 +12,10 @@
                 <div class="card-text" style="margin-bottom: 10px;">Who is this résumé for?</div>
                 <div class="form-row" style="margin-bottom: 10px; margin-left: 5px;">
                     <div class="col">
-                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Name" style="width: 250px;" maxlength="255">
+                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Name" style="width: 250px;" maxlength="150">
                     </div>
                     <div class="col">
-                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email" style="width: 250px;" maxlength="300">
+                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email" style="width: 250px;" maxlength="200">
                     </div>
                 </div>
                 <div class="card-text" style="margin-bottom: 10px;">What Interests You?</div>
@@ -25,7 +25,7 @@
                             Skills&nbsp;&nbsp;<i class="fas fa-caret-down"></i>
                         </button>
                         <div class="collapse" id="skillsDropdown">
-                            <select multiple style="border-radius: 0.25rem !important; margin-top: 5px; height: 250px; width: 250px;" name="skills">
+                            <select multiple style="border-radius: 0.25rem !important; margin-top: 5px; height: 250px; width: 250px;" name="skills[]" id="skills" required>
                                 @foreach($data['skills'] as $skill)
                                         <option class="dropdown-item" value="{{$skill->itemId}}">{{$skill->name}}</option>
                                 @endforeach
@@ -37,7 +37,7 @@
                             Education&nbsp;&nbsp;<i class="fas fa-caret-down"></i>
                         </button>
                         <div class="collapse" id="eduDropdown">
-                            <select multiple style="border-radius: 0.25rem !important; margin-top: 5px; height: 250px; width: 250px;" name="education">
+                            <select multiple style="border-radius: 0.25rem !important; margin-top: 5px; height: 250px; width: 250px;" name="education[]" id="education" required>
                                 @foreach($data['education'] as $edu)
                                     <option class="dropdown-item" value="{{$edu->itemId}}">{{$edu->name}}</option>
                                 @endforeach
@@ -49,7 +49,7 @@
                             Work Experience&nbsp;&nbsp;<i class="fas fa-caret-down"></i>
                         </button>
                         <div class="collapse" id="expDropdown">
-                            <select multiple style="border-radius: 0.25rem !important; margin-top: 5px; height: 250px; width: 250px;" name="work">
+                            <select multiple style="border-radius: 0.25rem !important; margin-top: 5px; height: 250px; width: 250px;" name="work[]" id="work" required>
                                 @foreach($data['work'] as $work)
                                     <option class="dropdown-item" value="{{$work->itemId}}">{{$work->name}}</option>
                                 @endforeach
@@ -61,7 +61,7 @@
                             Awards, Projects, Certifications &nbsp;&nbsp;<i class="fas fa-caret-down"></i>
                         </button>
                         <div class="collapse" id="certDropdown">
-                            <select multiple style="border-radius: 0.25rem !important; margin-top: 5px; height: 250px; width: 250px;" name="other">
+                            <select multiple style="border-radius: 0.25rem !important; margin-top: 5px; height: 250px; width: 250px;" name="other[]" id="other" required>
                                 @foreach($data['other'] as $other)
                                     <option class="dropdown-item" value="{{$other->itemId}}">{{$other->name}}</option>
                                 @endforeach

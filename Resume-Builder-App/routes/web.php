@@ -14,16 +14,14 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-// Route::get('/', function () {
-//     $data['resume-items'] = DB::table('resume_items')->get();
-//     //dd($data['resume-items']);
-//     //dd(DB::table('resume_items')->get());
-//     return view('index', ['data' => $data]);
-// });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'ResumeController@index');
 Route::post('/create', 'ResumeController@create')->name('create');
-Route::get('/resume', 'ResumeController@resume')->name('resume');
+Route::get('/resume/{id}', 'ResumeController@resume')->name('resume');
+Route::get('/manager', 'ManagerController@index')->name('manager.index');
+Route::get('/manager/edit/{id}', 'ManagerController@edit')->name('manager.edit');
+Route::get('/manager/resumes', 'ManagerController@resumes')->name('manager.resumes');
+Route::get('/manager/delete/{id}', 'ManagerController@delete')->name('manager.delete');

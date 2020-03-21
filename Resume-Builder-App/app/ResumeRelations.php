@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ResumeItem extends Model
+class ResumeRelations extends Model
 {
     //use Notifiable;
     /**
@@ -12,20 +12,20 @@ class ResumeItem extends Model
      *
      * @var string
      */
-    protected $table = 'resume_items';
+    protected $table = 'resumeRelations';
     /**
      * The primary key associated with the table.
      *
      * @var string
      */
-    protected $primaryKey = 'itemId';
+    protected $primaryKey = 'relId';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'category'
+        'genId', 'itemId'
     ];
 
 }

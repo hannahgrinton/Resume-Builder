@@ -60,7 +60,15 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                    
+                                    <a href="{{ route('manager.resumes') }}" class="dropdown-item">
+                                        Generated Resumes
+                                    </a>
+                                    
+                                    <a href="{{ route('manager.index') }}" class="dropdown-item">
+                                        Resume Manager
+                                    </a>
+                                    
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>

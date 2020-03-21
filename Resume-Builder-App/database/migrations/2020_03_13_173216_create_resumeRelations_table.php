@@ -18,7 +18,7 @@ class CreateResumeRelationsTable extends Migration
             $table->unsignedBigInteger('genId');
             $table->foreign('genId')->references('genId')->on('generatedResumes');
             $table->unsignedBigInteger('itemId');
-            $table->foreign('itemId')->references('itemId')->on('resume-items');
+            $table->foreign('itemId')->references('itemId')->on('resume_items');
             $table->timestamps();
         });
     }
