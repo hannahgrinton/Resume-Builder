@@ -73,7 +73,7 @@
                     
                     <button type="submit" class="btn btn-primary" style="margin-right: 10px;">Build</button>
                 
-                    <button class="btn btn-danger">Start Over</button>
+                    <input type="reset" class="btn btn-danger" value="Start Over">
  
                 </div>
             </form>

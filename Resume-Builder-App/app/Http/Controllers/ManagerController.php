@@ -27,5 +27,21 @@ class ManagerController extends Controller
 
         return view('manager.index', ['data' => $data]);
     }
+    /**
+     * Edit resume item form-page
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function edit($id) {
+        $data['item'] = DB::table('resume_items')->where('itemId', $id)->first();
+        return view('manager.edit', ['data' => $data]);
+    }
+    public function editSubmit($id) {
+        $item = ResumeItem::find($id);
+        $item->name = request('name');
+        $item->description = request('description');
+        $item->category = request('category');
+        $item->save();
+        return redirect('manager');
+    }
 
 }
