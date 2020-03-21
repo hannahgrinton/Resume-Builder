@@ -33,9 +33,13 @@
                         <a href="{{ route('manager.edit', $item->itemId) }}">
                             <i class="far fa-edit" style="margin-right: 2px;"></i>Edit
                         </a><br>
-                        <a href="{{ route('manager.delete', $item->itemId) }}">
-                            <i class="fas fa-trash-alt" style="margin-right: 2px;"></i>Delete
-                        </a>
+                        <form action="{{ route('manager.delete', $item->itemId)}}" method="post" style="margin: 0; padding: 0;">
+                            {{ method_field('DELETE')}}
+                            @csrf
+                            <button type="submit" class="btn btn-link text-danger" style="font-size: 12px; margin: 0; padding: 0; border: 0;">
+                                <i class="fas fa-trash-alt" style="margin-right: 2px;"></i>Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

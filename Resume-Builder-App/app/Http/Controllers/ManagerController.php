@@ -35,6 +35,10 @@ class ManagerController extends Controller
         $data['item'] = DB::table('resume_items')->where('itemId', $id)->first();
         return view('manager.edit', ['data' => $data]);
     }
+    /**
+     * Edit resume item and submit
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function editSubmit($id) {
         $item = ResumeItem::find($id);
         $item->name = request('name');
@@ -43,5 +47,22 @@ class ManagerController extends Controller
         $item->save();
         return redirect('manager');
     }
-
+    /**
+     * Delete the resume item
+     * 
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function destroy($id) {
+        ResumeRelations::where('itemId', $id)->delete();
+        ResumeItem::destroy($id);
+        return redirect('manager');
+    }
+    /**
+     * View resumes
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function resumes() {
+        $data['resumes'] = DB::table('generatedResumes')->get();
+        return view('manager.resumes', ['data' => $data]);
+    }
 }

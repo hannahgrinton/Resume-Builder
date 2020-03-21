@@ -16,3 +16,4 @@
 #### composer dump-autoload
 #### php artisan db:seed
 #### php artisan make:controller ResumeController
+#### php artisan make:controller ManagerController

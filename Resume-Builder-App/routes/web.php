@@ -25,4 +25,4 @@ Route::get('/manager', 'ManagerController@index')->name('manager.index');
 Route::get('/manager/edit/{id}', 'ManagerController@edit')->name('manager.edit');
 Route::post('/manager/editItem/{id}', 'ManagerController@editSubmit')->name('manager.editItem');
 Route::get('/manager/resumes', 'ManagerController@resumes')->name('manager.resumes');
-Route::get('/manager/delete/{id}', 'ManagerController@delete')->name('manager.delete');
+Route::delete('/manager/delete/{id}', 'ManagerController@destroy')->name('manager.delete');
